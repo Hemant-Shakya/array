@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 700px;
+            width: 500px;
+            background-color: lightgray;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            border-top: 4px solid orangered;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 10);          
+        }
+
+        h2{
+            margin-top: 40px;
+            color:black;
+            
+        }
+
+        .content button{
+            height: 30px;
+            width: 40%;
+            margin: 10px;
+            font-size: 1rem;
+            
+        }
+
+        button:hover{
+            background-color: orange;
+            border: none;
+            border-radius: 2px;
+        }
+
+        textarea{
+            width: 200px;
+            margin-top: 5px;
+            display: inline-table;
+        }
+        input[type=text]
+        {
+            height: 31px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+            <div>
+                <h2> Numbers for operations:- 23,55,36,48,75 </h2>
+            </div>            
+            <div class="content">
+                <button onclick="allv()">all</button>
+            </div>
+            <div>
+                <textarea name="txt" id="txt" cols="30" ></textarea>
+            </div>
+            <div class="content">
+                <button onclick="add()">add</button>
+                <input type="text" id="text1" name="text1">
+            </div>
+            <div class="content">
+                <button onclick="average()">average</button>
+                <input type="text" id="text2">
+            </div>
+            <div class="content">
+                <button onclick="highest()">highest</button>
+                <input type="text" id="text3">
+            </div>  
+            <div class="content">
+                <button onclick="lowest()">lowest</button>
+                <input type="text" id="text4">
+            </div>
+            <div class="content">
+                <button onclick="reverse()">Reverse</button>
+            </div>
+            <div>
+                <textarea name="text5" id="text5" cols="30" ></textarea>
+            </div>
+            <div class="content">
+                <button onclick="even()">even</button>
+            </div>
+            <div>
+                <textarea name="text5" id="text6" cols="30" ></textarea>
+            </div>
+            <div class="content">
+                <button onclick="odd()">odd</button>
+            </div>
+            <div>
+                <textarea name="text5" id="text7" cols="30" ></textarea>
+            </div>
+       
+    </div>
+    <p id="result"></p>
+
+
+</body>
+<script>
+    
+    function allv()
+    {
+    const arr=[23,55,36,48,75];
+    document.getElementById("txt").value=arr;
+    }
+
+    function add()
+    {
+        const arr=[23,55,36,48,75];
+        let sum = 0;
+        // iterate over each item in the array
+        for (let i = 0; i < arr.length; i++ ) 
+        {
+        sum=sum+arr[i];
+        }
+        document.getElementById("text1").value = sum;
+    }
+           
+    
+    function average()
+    {
+        const arr=[23,55,36,48,75];
+        let sum = 0;
+        // iterate over each item in the array
+        for (let i = 0; i < arr.length; i++ ) 
+        {
+        sum=sum+arr[i];
+       
+        
+        }
+        let avg=sum/arr.length;
+        document.getElementById("text2").value = avg;
+    }
+
+    function highest()
+    {
+        const arr=[23,55,36,48,75];
+        
+        let min = arr[0], max = arr[0]; 
+       for (let i = 1; i < arr.length; i++) { 
+          if (arr[i] > max) 
+             max = arr[i]; 
+          if (arr[i] < min) 
+             min = arr[i]; 
+        } 
+
+
+
+        document.getElementById("text3").value = max;
+    }
+
+
+    function lowest()
+    {
+        const arr=[23,55,36,48,75];
+        
+        let min = arr[0], max = arr[0]; 
+       for (let i = 1; i < arr.length; i++) { 
+          if (arr[i] > max) 
+             max = arr[i]; 
+          if (arr[i] < min) 
+             min = arr[i]; 
+        } 
+
+
+        document.getElementById("text4").value = min;
+    }
+
+
+
+    function reverse()
+    {
+    const arr=[23,55,36,48,75];
+    document.getElementById("text5").value=arr.reverse();
+    }
+
+    function even()
+    {
+        const arr=[23,55,36,48,75];
+        let array= [];
+        for(let i=0;i<arr.length;i++)
+        {
+        if(arr[i]%2 == 0)
+        {
+            array.push(arr[i]);
+        }
+        
+        }
+        document.getElementById("text6").value = array;
+    }
+
+
+    function odd()
+    {
+        const arr=[23,55,36,48,75];
+        let array= [];
+        for(let i=0;i<arr.length;i++)
+        {
+        if(arr[i]%2 != 0)
+        {
+            array.push(arr[i]);
+        }
+        
+        }
+        document.getElementById("text7").value = array;
+    }
+
+
+
+
+</script>
+</html>
